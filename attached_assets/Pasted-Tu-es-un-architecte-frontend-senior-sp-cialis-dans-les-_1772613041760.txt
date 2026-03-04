@@ -1,0 +1,504 @@
+Tu es un **architecte frontend senior spécialisé dans les plateformes fintech, banques digitales et services de crédit**.
+
+Ta mission est de concevoir **un site web complet pour une entreprise de financement / crédit**, similaire aux plateformes professionnelles de prêt utilisées par les institutions financières.
+
+Le site doit reproduire **la structure complète d’un site de service de prêt réel** : pages, sections, contenus, parcours utilisateur, simulation de prêt et présentation des services.
+
+Le site doit inspirer **confiance, sérieux et professionnalisme**, comme une véritable institution financière.
+
+---
+
+# CONTRAINTE ABSOLUE
+
+Le projet doit être **100% FRONTEND**.
+
+Il est **STRICTEMENT INTERDIT** d'utiliser :
+
+• backend
+• base de données
+• API serveur
+• endpoints
+• appels fetch vers un serveur
+• stockage distant
+
+Toutes les données doivent être :
+
+• statiques
+• simulées
+• stockées uniquement côté frontend
+
+Utiliser uniquement :
+
+• mock data
+• state React
+• localStorage
+
+Le site doit fonctionner **entièrement côté navigateur**.
+
+---
+
+# STACK TECHNIQUE
+
+Utiliser :
+
+React + TypeScript
+TailwindCSS
+Architecture modulaire propre
+
+Structure recommandée :
+
+/components
+/pages
+/layouts
+/data
+/utils
+/hooks
+/locales
+/i18n
+
+---
+
+# OBJECTIF DU SITE
+
+Créer un site professionnel permettant :
+
+• présenter les différents types de prêts
+• expliquer les services financiers
+• simuler un prêt
+• faire une demande de prêt
+• contacter l’entreprise
+
+Le site doit reproduire **l’expérience utilisateur d’un vrai site bancaire ou de crédit**.
+
+---
+
+# MULTILINGUE (OBLIGATOIRE)
+
+Le site doit être **entièrement multilingue**.
+
+Langues supportées :
+
+Français (FR)
+Anglais (EN)
+Allemand (DE)
+Espagnol (ES)
+Italien (IT)
+Portugais (PT)
+
+Utiliser :
+
+react-i18next
+ou un système JSON équivalent.
+
+Les traductions doivent être stockées dans :
+
+/locales/fr.json
+/locales/en.json
+/locales/de.json
+/locales/es.json
+/locales/it.json
+/locales/pt.json
+
+Exemple :
+
+{
+"home_title": "Une approche différente du financement",
+"loan_request": "Demander un prêt",
+"contact": "Contact"
+}
+
+Tous les textes du site doivent être traduisibles.
+
+Aucun texte ne doit être codé en dur.
+
+---
+
+# SÉLECTEUR DE LANGUE
+
+Ajouter dans le header un **language switcher** avec les drapeaux :
+
+🇫🇷 Français
+🇬🇧 English
+🇩🇪 Deutsch
+🇪🇸 Español
+🇮🇹 Italiano
+🇵🇹 Português
+
+Quand l'utilisateur change la langue :
+
+• toute l’interface doit se traduire immédiatement
+• sans rechargement de page
+
+La langue choisie doit être sauvegardée dans **localStorage**.
+
+Au chargement du site :
+
+• récupérer la langue sauvegardée
+• sinon utiliser la langue du navigateur.
+
+---
+
+# NAVIGATION PRINCIPALE
+
+Le header doit contenir :
+
+Logo
+Accueil
+Nos prêts (menu dropdown)
+A propos
+Contact
+
+Bouton principal :
+
+**Demander un prêt**
+
+---
+
+# MENU "NOS PRÊTS"
+
+Le menu doit contenir :
+
+Prêt personnel
+Prêt professionnel
+Prêt à la consommation
+Prêt étudiant
+Prêt auto
+Rachat de crédit
+
+Chaque prêt doit avoir **une page détaillée dédiée**.
+
+---
+
+# UTILISATION D'IMAGES (TRÈS IMPORTANT)
+
+Toutes les pages doivent contenir **des images d’illustration professionnelles liées à la finance**.
+
+Les images doivent apparaître dans :
+
+• hero sections
+• cartes de services
+• sections explicatives
+• pages de prêt
+• pages à propos
+
+Utiliser :
+
+• photos professionnelles (finance, banque, entreprise, clients)
+• illustrations modernes fintech
+• images crédibles pour un site de financement
+
+Les images doivent améliorer la **crédibilité et l’expérience utilisateur**.
+
+---
+
+# PAGE ACCUEIL
+
+La page d'accueil doit inclure :
+
+## HERO SECTION
+
+Titre :
+
+"Une approche différente du financement : claire, humaine et responsable"
+
+Bouton :
+
+Commencer votre demande
+
+Ajouter **une grande image professionnelle liée au financement**.
+
+---
+
+## SECTION AVANTAGES
+
+3 cartes présentant :
+
+Un prêt simple, rapide et accessible
+Un financement adapté à vos besoins
+Un service fiable et sécurisé
+
+Chaque carte peut inclure **une icône ou illustration**.
+
+---
+
+## SECTION TYPES DE PRÊTS
+
+Afficher plusieurs cartes :
+
+Prêt personnel
+Prêt professionnel
+Prêt auto
+Prêt travaux / habitat
+Prêt vacances
+Prêt étudiant
+
+Chaque carte contient :
+
+image d’illustration
+description
+montant minimum
+montant maximum
+durée
+bouton "En savoir plus"
+
+---
+
+## SECTION EXEMPLE DE CRÉDIT
+
+Afficher un exemple représentatif :
+
+montant du prêt
+TAEG
+mensualité
+montant total
+intérêts
+
+---
+
+## SECTION TIMELINE
+
+Présenter l’évolution de l’entreprise :
+
+2016 – premiers clients
+2018 – expansion
+2020 – croissance
+2023 – leadership
+
+---
+
+## SECTION APPEL À ACTION
+
+"BESOIN DE FINANCEMENT ?
+Faites votre demande de prêt en quelques minutes."
+
+Boutons :
+
+Demander un prêt
+Nous contacter
+
+Ajouter **une image illustrant un conseiller financier ou une réunion client**.
+
+---
+
+# PAGE À PROPOS
+
+Contenu :
+
+présentation de l'entreprise
+mission
+vision
+expertise
+
+Afficher statistiques :
+
+clients accompagnés
+années d’expérience
+projets financés
+
+Inclure **des images d’équipe ou de travail financier**.
+
+---
+
+# PAGE SERVICE (POUR CHAQUE TYPE DE PRÊT)
+
+Structure :
+
+Titre du prêt
+
+Description détaillée
+
+Caractéristiques du prêt :
+
+montant du prêt
+durée
+TAEG
+type de taux
+conditions
+
+---
+
+## POURQUOI CHOISIR CE PRÊT
+
+Liste d’avantages :
+
+remboursement flexible
+mensualités adaptées
+accompagnement financier
+transparence
+
+---
+
+## EXEMPLE DE SIMULATION
+
+Exemple :
+
+Un prêt de 15000 € sur 120 mois
+TAEG 4.5%
+Mensualité 155.48 €
+Total intérêts
+
+Bouton :
+
+Demander mon prêt
+
+---
+
+# SIMULATEUR DE PRÊT
+
+Créer un simulateur interactif avec :
+
+slider montant
+slider durée
+taux d’intérêt
+
+Calculer :
+
+mensualité
+total intérêts
+total remboursé
+
+Formule :
+
+mensualité = capital × taux / (1 − (1 + taux)^−durée)
+
+Les résultats doivent se mettre à jour **en temps réel**.
+
+---
+
+# FORMULAIRE DEMANDE DE PRÊT (FRONTEND UNIQUEMENT)
+
+Champs :
+
+Nom
+Email
+Revenu mensuel
+Montant souhaité
+Durée
+
+Simulation de décision :
+
+Si revenu > mensualité × 3
+→ prêt pré-approuvé
+
+Sinon
+→ demande en analyse
+
+Afficher un résultat visuel.
+
+---
+
+# PAGE CONTACT
+
+Contient un formulaire :
+
+Nom
+Prénom
+Email
+Téléphone
+Sujet
+Message
+
+Afficher également :
+
+adresse
+email
+site web
+
+Les formulaires ne doivent **pas envoyer de données vers un serveur**.
+
+À la soumission :
+
+afficher un message simulé :
+
+"Votre demande a été enregistrée. Un conseiller vous contactera prochainement."
+
+---
+
+# DESIGN
+
+Le design doit être :
+
+moderne
+professionnel
+minimaliste
+
+Couleurs :
+
+vert financier
+gris clair
+blanc
+
+Cartes avec ombres douces
+boutons arrondis
+animations légères
+
+---
+
+# RESPONSIVE
+
+Le site doit être optimisé pour :
+
+mobile
+tablette
+desktop
+
+---
+
+# FOOTER
+
+Le footer doit contenir :
+
+logo
+description entreprise
+
+liste crédits :
+
+prêt personnel
+prêt professionnel
+prêt étudiant
+prêt auto
+rachat de crédit
+
+menu :
+
+Accueil
+A propos
+FAQ
+Demande de prêt
+Contact
+
+contact :
+
+adresse
+email
+site web
+
+---
+
+# BONUS UX
+
+Ajouter :
+
+animations douces
+micro-interactions
+transitions fluides
+feedback utilisateur
+
+---
+
+# OBJECTIF FINAL
+
+Le site doit :
+
+• être entièrement multilingue
+• fonctionner sans backend
+• être totalement frontend
+• fonctionner même hors ligne
+
+Produire :
+
+• la structure complète du projet
+• toutes les pages
+• tous les composants
+• toutes les traductions
+• un design professionnel prêt à utiliser
