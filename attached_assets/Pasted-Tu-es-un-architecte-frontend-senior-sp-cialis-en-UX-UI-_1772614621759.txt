@@ -1,0 +1,274 @@
+Tu es un **architecte frontend senior spécialisé en UX/UI pour les plateformes fintech et services de crédit**.
+
+Le site de prêt est déjà généré avec React, TypeScript et TailwindCSS.
+
+Ta mission est **d’améliorer le design, la cohérence UX et certains composants**, tout en conservant l’architecture actuelle.
+
+IMPORTANT :
+
+Le projet doit rester **100% FRONTEND**.
+
+Il est strictement interdit d’utiliser :
+
+• backend
+• base de données
+• API serveur
+• appels fetch vers un serveur
+
+Toutes les données doivent rester :
+
+• simulées
+• locales
+• gérées dans le frontend
+
+---
+
+# OBJECTIF DES AMÉLIORATIONS
+
+Améliorer :
+
+• l’expérience utilisateur
+• la cohérence visuelle
+• la crédibilité de la plateforme
+• la fluidité de navigation
+
+Le site doit donner l’impression d’une **plateforme de financement professionnelle et fiable**.
+
+---
+
+# NAVIGATION / HEADER
+
+Le menu de navigation doit être **toujours visible**.
+
+Implémenter un **sticky header** :
+
+• le menu reste visible lors du scroll
+• fond légèrement opaque avec effet blur
+• ombre douce lors du scroll
+
+Le header doit contenir :
+
+Logo
+Accueil
+Nos prêts (dropdown)
+A propos
+Contact
+
+Bouton principal :
+
+**Demander un prêt**
+
+Ce bouton doit être visuellement mis en avant.
+
+---
+
+# SÉLECTEUR DE LANGUE
+
+Améliorer le sélecteur de langue.
+
+Afficher les **drapeaux des pays**.
+
+Langues supportées :
+
+🇫🇷 Français
+🇬🇧 English
+🇩🇪 Deutsch
+🇪🇸 Español
+🇮🇹 Italiano
+🇵🇹 Português
+
+Comportement responsive :
+
+Desktop :
+
+• drapeau + nom de langue
+
+Mobile :
+
+• afficher uniquement les drapeaux
+
+Le changement de langue doit être **fluide et instantané**.
+
+---
+
+# AMÉLIORATION DES PAGES DE PRÊTS
+
+Sur les pages expliquant les différents prêts :
+
+Prêt personnel
+Prêt étudiant
+Prêt professionnel
+Prêt auto
+etc.
+
+Ajouter une **meilleure organisation des informations**.
+
+Créer plusieurs blocs :
+
+---
+
+## Bloc 1 — Présentation du prêt
+
+Titre du prêt
+image d’illustration professionnelle
+
+Description claire du type de prêt.
+
+---
+
+## Bloc 2 — Caractéristiques principales
+
+Afficher dans des cartes :
+
+Montant minimum
+Montant maximum
+Durée
+TAEG
+Type de taux
+
+---
+
+## Bloc 3 — Pourquoi choisir ce prêt
+
+Liste claire d’avantages :
+
+flexibilité
+accompagnement
+conditions avantageuses
+transparence
+
+---
+
+## Bloc 4 — Exemple de financement
+
+Exemple :
+
+Un prêt de 15000 € sur 120 mois
+TAEG 4.5%
+Mensualité
+Total intérêts
+
+Présenter ce bloc dans une **carte visuelle claire**.
+
+---
+
+## Bloc 5 — Appel à action
+
+Bouton principal :
+
+**Demander un prêt**
+
+Ne pas utiliser le mot :
+
+"Simulateur"
+
+Le bouton doit toujours être :
+
+**Demander un prêt**
+
+---
+
+# FORMULAIRE DE DEMANDE DE PRÊT
+
+Le formulaire doit être **plus riche et plus professionnel**, similaire à celui montré dans la capture.
+
+Ajouter les champs :
+
+Nom
+Prénoms
+Email
+Type de crédit (select)
+Montant du crédit
+Durée de remboursement (mois)
+Numéro de téléphone
+Adresse
+Ville
+Code postal
+Pays
+
+Utiliser :
+
+• champs bien espacés
+• design moderne
+• validation visuelle
+• placeholders clairs
+
+Le bouton doit être :
+
+**Soumettre maintenant**
+
+---
+
+# DESIGN DU FORMULAIRE
+
+Améliorer :
+
+• lisibilité
+• espacement
+• hiérarchie visuelle
+
+Utiliser :
+
+• cartes arrondies
+• bordures légères
+• animations de focus sur les champs
+• bouton large et visible
+
+---
+
+# FLUIDITÉ UX
+
+Ajouter :
+
+• transitions fluides
+• animations légères
+• hover states sur boutons
+• feedback visuel sur interactions
+
+---
+
+# SECTION CTA
+
+Améliorer la section :
+
+"Besoin de financement ? Faites votre demande de prêt en quelques minutes."
+
+Utiliser :
+
+• une image professionnelle
+• deux boutons :
+
+Demander un prêt
+Nous contacter
+
+---
+
+# COHÉRENCE GLOBALE
+
+S’assurer que :
+
+• tous les boutons utilisent la même terminologie
+• tous les espaces sont cohérents
+• toutes les pages utilisent les mêmes styles
+
+Le site doit être :
+
+moderne
+fluide
+professionnel
+crédible
+
+comme une **plateforme fintech sérieuse**.
+
+---
+
+# OBJECTIF FINAL
+
+Le site doit :
+
+• inspirer confiance
+• être très fluide
+• être visuellement cohérent
+• améliorer l’expérience utilisateur
+
+Tout en restant **100% frontend sans backend**.

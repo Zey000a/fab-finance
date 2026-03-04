@@ -20,12 +20,12 @@ export function Navbar() {
   }, []);
 
   const languages = [
-    { code: 'fr', label: 'FR' },
-    { code: 'en', label: 'EN' },
-    { code: 'de', label: 'DE' },
-    { code: 'es', label: 'ES' },
-    { code: 'it', label: 'IT' },
-    { code: 'pt', label: 'PT' }
+    { code: 'fr', label: 'Français', flag: '🇫🇷' },
+    { code: 'en', label: 'English', flag: '🇬🇧' },
+    { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+    { code: 'es', label: 'Español', flag: '🇪🇸' },
+    { code: 'it', label: 'Italiano', flag: '🇮🇹' },
+    { code: 'pt', label: 'Português', flag: '🇵🇹' }
   ];
 
   const loanTypes = [
@@ -103,25 +103,27 @@ export function Navbar() {
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-4">
             <div className="relative group">
-              <button className={`flex items-center gap-1 p-2 rounded-lg transition-colors ${isScrolled ? 'hover:bg-gray-100 text-gray-600' : 'hover:bg-white/10 text-white'}`}>
-                <Globe className="w-5 h-5" />
-                <span className="text-sm font-medium uppercase">{lang}</span>
+              <button className={`flex items-center gap-2 p-2 rounded-lg transition-colors ${isScrolled ? 'hover:bg-gray-100 text-gray-600' : 'hover:bg-white/10 text-white'}`}>
+                <span className="text-xl">{languages.find(l => l.code === lang)?.flag}</span>
+                <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label}</span>
+                <ChevronDown className="w-4 h-4 opacity-50" />
               </button>
-              <div className="absolute top-full right-0 mt-2 w-24 bg-white rounded-xl shadow-xl border border-gray-100 py-2 hidden group-hover:block">
+              <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-2 hidden group-hover:block animate-in fade-in slide-in-from-top-2 duration-200">
                 {languages.map((l) => (
                   <button
                     key={l.code}
                     onClick={() => setLang(l.code as any)}
-                    className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${lang === l.code ? 'text-primary font-bold' : 'text-gray-700'}`}
+                    className={`w-full text-left px-4 py-2 text-sm flex items-center gap-3 hover:bg-gray-50 transition-colors ${lang === l.code ? 'text-primary font-bold bg-green-50' : 'text-gray-700'}`}
                   >
-                    {l.label}
+                    <span className="text-lg">{l.flag}</span>
+                    <span>{l.label}</span>
                   </button>
                 ))}
               </div>
             </div>
 
             <Link href="/simulateur" className="px-6 py-2.5 rounded-full font-semibold bg-primary text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300">
-              {t('nav.simulator')}
+              {t('nav.loan_request_btn') || 'Demander un prêt'}
             </Link>
           </div>
 
@@ -172,14 +174,15 @@ export function Navbar() {
                 </div>
               </div>
 
-              <div className="flex gap-2 pt-4 border-t border-gray-100">
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
                 {languages.map((l) => (
                   <button
                     key={l.code}
                     onClick={() => { setLang(l.code as any); setMobileMenuOpen(false); }}
-                    className={`px-3 py-1 rounded-md text-sm font-medium ${lang === l.code ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600'}`}
+                    className={`p-2 rounded-lg text-xl transition-all ${lang === l.code ? 'bg-primary/10 ring-2 ring-primary' : 'bg-gray-100'}`}
+                    title={l.label}
                   >
-                    {l.label}
+                    {l.flag}
                   </button>
                 ))}
               </div>
@@ -189,7 +192,7 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center px-6 py-3 mt-4 rounded-xl font-semibold bg-primary text-white shadow-lg shadow-primary/30"
               >
-                {t('nav.simulator')}
+                {t('nav.loan_request_btn') || 'Demander un prêt'}
               </Link>
             </div>
           </motion.div>

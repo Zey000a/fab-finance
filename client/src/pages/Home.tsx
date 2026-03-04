@@ -177,14 +177,31 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')] pattern-grid" />
-        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Prêt à concrétiser votre projet ?</h2>
-          <p className="text-lg text-primary-foreground/80 mb-10">Simulez votre prêt en 2 minutes, sans engagement, et obtenez une réponse de principe immédiate.</p>
-          <Link href="/simulateur" className="inline-block px-10 py-4 rounded-xl font-bold bg-white text-primary shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
-            {t('hero.cta1')}
-          </Link>
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1600880210830-85910bad3d00?q=80&w=2000&auto=format&fit=crop" 
+            alt="Advisor" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm" />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
+            Besoin de financement ?<br/>
+            <span className="text-primary">Faites votre demande en 2 minutes.</span>
+          </h2>
+          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            Rejoignez des milliers de clients qui nous font confiance pour leurs projets. Réponse de principe immédiate et sans engagement.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/simulateur" className="px-10 py-5 rounded-2xl font-black text-xl bg-primary text-white shadow-2xl shadow-primary/40 hover:shadow-primary/60 hover:-translate-y-1 transition-all">
+              Demander un prêt
+            </Link>
+            <Link href="/contact" className="px-10 py-5 rounded-2xl font-black text-xl bg-white/10 text-white backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
+              Nous contacter
+            </Link>
+          </div>
         </div>
       </section>
     </div>
