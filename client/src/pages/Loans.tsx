@@ -1,6 +1,7 @@
 import { useParams, Link } from "wouter";
 import { useI18n } from "@/lib/i18n-context";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Landmark, Phone } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Loans() {
   const params = useParams();

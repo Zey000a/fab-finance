@@ -44,7 +44,7 @@ export function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-white/80 backdrop-blur-sm py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
@@ -60,7 +60,7 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
-            <Link href="/" className={`font-medium transition-colors hover:text-primary ${location === '/' ? 'text-primary' : isScrolled ? 'text-foreground/80' : 'text-white/90'}`}>
+            <Link href="/" className={`font-medium transition-colors hover:text-primary ${location === '/' ? 'text-primary' : 'text-foreground/80'}`}>
               {t('nav.home')}
             </Link>
 
@@ -70,7 +70,7 @@ export function Navbar() {
               onMouseEnter={() => setLoansDropdownOpen(true)}
               onMouseLeave={() => setLoansDropdownOpen(false)}
             >
-              <button className={`flex items-center gap-1 font-medium transition-colors hover:text-primary ${location.startsWith('/loans') ? 'text-primary' : isScrolled ? 'text-foreground/80' : 'text-white/90'}`}>
+              <button className={`flex items-center gap-1 font-medium transition-colors hover:text-primary ${location.startsWith('/loans') ? 'text-primary' : 'text-foreground/80'}`}>
                 {t('nav.loans')} <ChevronDown className="w-4 h-4" />
               </button>
               
@@ -92,10 +92,10 @@ export function Navbar() {
               </AnimatePresence>
             </div>
 
-            <Link href="/about" className={`font-medium transition-colors hover:text-primary ${location === '/about' ? 'text-primary' : isScrolled ? 'text-foreground/80' : 'text-white/90'}`}>
+            <Link href="/about" className={`font-medium transition-colors hover:text-primary ${location === '/about' ? 'text-primary' : 'text-foreground/80'}`}>
               {t('nav.about')}
             </Link>
-            <Link href="/contact" className={`font-medium transition-colors hover:text-primary ${location === '/contact' ? 'text-primary' : isScrolled ? 'text-foreground/80' : 'text-white/90'}`}>
+            <Link href="/contact" className={`font-medium transition-colors hover:text-primary ${location === '/contact' ? 'text-primary' : 'text-foreground/80'}`}>
               {t('nav.contact')}
             </Link>
           </div>
@@ -103,7 +103,7 @@ export function Navbar() {
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-4">
             <div className="relative group">
-              <button className={`flex items-center gap-2 p-2 rounded-lg transition-colors ${isScrolled ? 'hover:bg-gray-100 text-gray-600' : 'hover:bg-white/10 text-white'}`}>
+              <button className={`flex items-center gap-2 p-2 rounded-lg transition-colors ${isScrolled ? 'hover:bg-gray-100 text-gray-600' : 'hover:bg-black/5 text-gray-700'}`}>
                 <span className="text-xl">{languages.find(l => l.code === lang)?.flag}</span>
                 <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label}</span>
                 <ChevronDown className="w-4 h-4 opacity-50" />

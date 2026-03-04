@@ -20,7 +20,7 @@ export const translations = {
     hero: {
       title: "Une approche différente du financement",
       subtitle: "Des solutions de crédit sur mesure, transparentes et rapides pour réaliser tous vos projets en toute sérénité.",
-      cta1: "Faire une simulation",
+      cta1: "Demander un prêt",
       cta2: "Découvrir nos prêts"
     },
     advantages: {
@@ -41,7 +41,7 @@ export const translations = {
       income: "Revenus mensuels nets (€)",
       name: "Nom complet",
       email: "Email",
-      submit: "Envoyer ma demande",
+      submit: "Demander un prêt",
       preApproved: "Pré-approuvé",
       analysis: "En analyse",
       success: "Votre demande a été envoyée avec succès. Un conseiller vous contactera sous 24h."

@@ -1,0 +1,155 @@
+Tu es un **ingénieur frontend senior spécialisé dans React, TypeScript, TailwindCSS et UX fintech**.
+
+Le site de prêt existe déjà et a récemment été modifié.
+Certaines modifications ont introduit des **erreurs techniques et supprimé des fonctionnalités importantes**.
+
+Ta mission est de **corriger le site sans casser l’architecture existante**.
+
+IMPORTANT :
+
+Le projet doit rester **100% FRONTEND**.
+
+Il est strictement interdit d’utiliser :
+
+• backend
+• base de données
+• API serveur
+• appels fetch vers un serveur
+
+Toutes les données doivent rester **simulées côté frontend**.
+
+---
+
+# PROBLÈME 1 — LE SIMULATEUR A ÉTÉ SUPPRIMÉ
+
+Le simulateur de prêt est **une fonctionnalité obligatoire du site**.
+
+Il doit être restauré.
+
+Le simulateur doit permettre :
+
+• choisir le montant du prêt
+• choisir la durée
+• définir le taux
+
+Afficher en temps réel :
+
+• mensualité
+• total remboursé
+• total des intérêts
+
+Formule :
+
+mensualité = capital × taux / (1 − (1 + taux)^−durée)
+
+Le simulateur doit être présent :
+
+• sur la page principale
+• ou sur une page dédiée
+
+---
+
+# PROBLÈME 2 — ERREUR JAVASCRIPT
+
+Erreur actuelle :
+
+motion is not defined
+
+Fichier :
+
+src/pages/Loans.tsx
+
+Cause probable :
+
+Le composant `motion` de **framer-motion** est utilisé sans être importé.
+
+Corriger en ajoutant :
+
+import { motion } from "framer-motion"
+
+Si la librairie n'est pas installée, l'ajouter correctement.
+
+---
+
+# PROBLÈME 3 — COHÉRENCE DES BOUTONS
+
+Sur toutes les pages du site, les boutons doivent utiliser **exactement le même texte** :
+
+Demander un prêt
+
+Il ne doit pas y avoir :
+
+• "simulateur"
+• "demander mon prêt"
+• "loan request"
+• variantes incohérentes
+
+Tous les boutons CTA doivent afficher :
+
+**Demander un prêt**
+
+---
+
+# PROBLÈME 4 — HEADER TOUJOURS VISIBLE
+
+Le header doit être **sticky**.
+
+Il doit rester visible lors du scroll.
+
+Implémenter :
+
+position: sticky
+top: 0
+z-index élevé
+
+Ajouter :
+
+• ombre douce lors du scroll
+• fond légèrement opaque
+
+---
+
+# PROBLÈME 5 — VÉRIFICATION GLOBALE DES PAGES
+
+Vérifier toutes les pages :
+
+Accueil
+Nos prêts
+Détail des prêts
+A propos
+Contact
+Demande de prêt
+
+Corriger :
+
+• erreurs React
+• imports manquants
+• composants cassés
+• incohérences de texte
+
+---
+
+# AMÉLIORATION UX
+
+S’assurer que :
+
+• les transitions sont fluides
+• les boutons ont des effets hover
+• les formulaires ont un bon espacement
+• les sections sont bien organisées
+
+---
+
+# OBJECTIF FINAL
+
+Après correction :
+
+Le site doit :
+
+• fonctionner sans erreur
+• conserver le simulateur de prêt
+• avoir un header sticky
+• utiliser un bouton "Demander un prêt" cohérent
+• rester entièrement frontend
+
+Le code doit être **propre, stable et prêt à être utilisé en production**.

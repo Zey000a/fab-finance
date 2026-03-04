@@ -49,7 +49,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/simulateur" className="px-8 py-4 rounded-xl font-bold bg-primary text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1 transition-all text-center flex items-center justify-center gap-2">
-                {t('hero.cta1')} <ArrowRight className="w-5 h-5" />
+                Demander un prêt <ArrowRight className="w-5 h-5" />
               </Link>
               <Link href="/about" className="px-8 py-4 rounded-xl font-bold bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/10 transition-all text-center">
                 {t('hero.cta2')}
