@@ -1,52 +1,80 @@
+import { motion } from "framer-motion"
+import { TrendingDown, TrendingUp, Clock, Percent, Receipt, BadgeCheck } from "lucide-react"
+
 interface Props {
-  min: string
-  max: string
+  min:      string
+  max:      string
   duration: string
-  taeg: string
+  taeg:     string
   rateType: string
 }
 
-export default function LoanStats({
-  min,
-  max,
-  duration,
-  taeg,
-  rateType
-}: Props) {
+const ICONS = [TrendingDown, TrendingUp, Clock, Percent, BadgeCheck, Receipt]
 
+const COLORS = [
+  { color: "#16a34a", bg: "#f0fdf4" },
+  { color: "#3b82f6", bg: "#eff6ff" },
+  { color: "#f59e0b", bg: "#fffbeb" },
+  { color: "#8b5cf6", bg: "#f5f3ff" },
+  { color: "#0ea5e9", bg: "#f0f9ff" },
+  { color: "#10b981", bg: "#ecfdf5" },
+]
+
+export default function LoanStats({ min, max, duration, taeg, rateType }: Props) {
   const stats = [
-    { label: "Montant Min.", value: min },
-    { label: "Montant Max.", value: max },
-    { label: "Durée", value: duration },
-    { label: "TAEG Fixe", value: taeg },
-    { label: "Type de taux", value: rateType },
-    { label: "Frais de dossier", value: "0 €" },
+    { label: "Montant min.",      value: min      },
+    { label: "Montant max.",      value: max      },
+    { label: "Durée",             value: duration },
+    { label: "TAEG fixe",         value: taeg     },
+    { label: "Type de taux",      value: rateType },
+    { label: "Frais de dossier",  value: "0 €"    },
   ]
 
   return (
-
     <div className="my-10 grid grid-cols-2 md:grid-cols-3 gap-4">
+      {stats.map((item, i) => {
+        const Icon  = ICONS[i]
+        const { color, bg } = COLORS[i]
 
-      {stats.map((item, i) => (
+        return (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.07 }}
+            className="group bg-white rounded-2xl border border-gray-100 p-5 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
+          >
+            {/* Icône */}
+            <div
+              className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+              style={{ background: bg }}
+            >
+              <Icon className="w-5 h-5" style={{ color }} />
+            </div>
 
-        <div
-          key={i}
-          className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-center"
-        >
+            {/* Texte */}
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">
+                {item.label}
+              </span>
+              <span
+                className="text-lg font-extrabold"
+                style={{ color }}
+              >
+                {item.value}
+              </span>
+            </div>
 
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
-            {item.label}
-          </span>
-
-          <span className="text-lg font-bold text-gray-900">
-            {item.value}
-          </span>
-
-        </div>
-
-      ))}
-
+            {/* Bordure colorée gauche */}
+            <div
+              className="absolute left-0 top-3 bottom-3 w-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{ background: color }}
+            />
+          </motion.div>
+        )
+      })}
     </div>
-
   )
 }

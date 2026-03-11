@@ -13,22 +13,41 @@ import Simulator from "./pages/Simulator";
 import Loans from "./pages/Loans";
 import NotFound from "./pages/not-found";
 import ScrollToTop from "@/components/ScrollToTop"
+import WhatsAppButton from "@/components/WhatsAppButton"
+import MentionsLegales          from "@/pages/MentionsLegales"
+import PolitiqueConfidentialite  from "@/pages/PolitiqueConfidentialite"
+import HowItWorks from "@/pages/HowItWorks"
+import { CookieProvider } from "./components/Cookiecontext";
+import CookieBanner from "./components/Cookiebanner";
+import CookiesPage from "./pages/Cookiespage";
+
 
 function Router() {
   return (
+    
     <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-1">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/simulateur" component={Simulator} />
-          <Route path="/loans/:type" component={Loans} />
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-      <Footer />
+      <CookieProvider>
+        <Navbar />
+        <main className="flex-1">
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/simulateur" component={Simulator} />
+            <Route path="/loans/:type" component={Loans} />
+            <Route path="/mentions-legales"           component={MentionsLegales}         />
+            <Route path="/politique-confidentialite"  component={PolitiqueConfidentialite} />
+            <Route path="/comment-ca-marche" component={HowItWorks} />
+            <Route path="/cookies" component={CookiesPage} />
+
+            <Route component={NotFound} />
+          </Switch>
+
+            <CookieBanner />
+            <WhatsAppButton />
+        </main>
+        <Footer />
+      </CookieProvider>
     </div>
   );
 }

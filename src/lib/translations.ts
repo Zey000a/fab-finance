@@ -7,10 +7,11 @@ export const translations = {
       loans: "Nos Prêts",
       about: "À Propos",
       contact: "Contact",
+      comment: "Comment ça marche",
       simulator: "Simulateur",
       loanTypes: {
         personnel: "Prêt Personnel",
-        pro: "Prêt Professionnel",
+        professionnel: "Prêt Professionnel",
         conso: "Prêt Consommation",
         etudiant: "Prêt Étudiant",
         auto: "Prêt Auto",
@@ -60,7 +61,7 @@ export const translations = {
       simulator: "Simulator",
       loanTypes: {
         personnel: "Personal Loan",
-        pro: "Business Loan",
+        professionnel: "Business Loan",
         conso: "Consumer Loan",
         etudiant: "Student Loan",
         auto: "Auto Loan",
@@ -102,28 +103,28 @@ export const translations = {
     }
   },
   de: {
-    nav: { home: "Startseite", loans: "Unsere Kredite", about: "Über uns", contact: "Kontakt", simulator: "Simulator", loanTypes: { personnel: "Privatkredit", pro: "Geschäftskredit", conso: "Konsumentenkredit", etudiant: "Studienkredit", auto: "Autokredit", rachat: "Umschuldung" } },
+    nav: { home: "Startseite", loans: "Unsere Kredite", about: "Über uns", contact: "Kontakt", simulator: "Simulator", loanTypes: { personnel: "Privatkredit", professionnel: "Geschäftskredit", conso: "Konsumentenkredit", etudiant: "Studienkredit", auto: "Autokredit", rachat: "Umschuldung" } },
     hero: { title: "Ein anderer Ansatz zur Finanzierung", subtitle: "Maßgeschneiderte, transparente und schnelle Kreditlösungen.", cta1: "Simulation starten", cta2: "Kredite entdecken" },
     advantages: { title: "Warum uns wählen?", speed: "Geschwindigkeit", speedDesc: "Sofortige grundsätzliche Zusage.", transparency: "Transparenz", transparencyDesc: "Keine versteckten Gebühren.", support: "Unterstützung", supportDesc: "Expertenberater für Sie." },
     simulator: { title: "Kredit simulieren", amount: "Betrag (€)", duration: "Dauer (Monate)", monthlyPayment: "Monatliche Rate", rate: "Fester effektiver Jahreszins", income: "Nettoeinkommen (€)", name: "Name", email: "E-Mail", submit: "Anfrage senden", preApproved: "Vorab genehmigt", analysis: "In Prüfung", success: "Erfolgreich gesendet." },
     footer: { rights: "Alle Rechte vorbehalten.", legal: "Ein Kredit ist bindend und muss zurückgezahlt werden." }
   },
   es: {
-    nav: { home: "Inicio", loans: "Nuestros Préstamos", about: "Acerca de", contact: "Contacto", simulator: "Simulador", loanTypes: { personnel: "Préstamo Personal", pro: "Préstamo Comercial", conso: "Préstamo de Consumo", etudiant: "Préstamo Estudiantil", auto: "Préstamo de Auto", rachat: "Consolidación de Deuda" } },
+    nav: { home: "Inicio", loans: "Nuestros Préstamos", about: "Acerca de", contact: "Contacto", simulator: "Simulador", loanTypes: { personnel: "Préstamo Personal", professionnel: "Préstamo Comercial", conso: "Préstamo de Consumo", etudiant: "Préstamo Estudiantil", auto: "Préstamo de Auto", rachat: "Consolidación de Deuda" } },
     hero: { title: "Un enfoque diferente para la financiación", subtitle: "Soluciones de crédito a medida, transparentes y rápidas.", cta1: "Iniciar Simulación", cta2: "Descubrir Préstamos" },
     advantages: { title: "¿Por qué elegirnos?", speed: "Velocidad", speedDesc: "Aprobación inmediata.", transparency: "Transparencia", transparencyDesc: "Sin comisiones ocultas.", support: "Soporte", supportDesc: "Asesores expertos." },
     simulator: { title: "Simula tu préstamo", amount: "Monto (€)", duration: "Duración (meses)", monthlyPayment: "Cuota mensual", rate: "TAE fija", income: "Ingresos netos (€)", name: "Nombre", email: "Email", submit: "Enviar solicitud", preApproved: "Preaprobado", analysis: "En análisis", success: "Enviado con éxito." },
     footer: { rights: "Todos los derechos reservados.", legal: "Un préstamo es un compromiso y debe ser reembolsado." }
   },
   it: {
-    nav: { home: "Home", loans: "I nostri Prestiti", about: "Chi Siamo", contact: "Contatto", simulator: "Simulatore", loanTypes: { personnel: "Prestito Personale", pro: "Prestito Aziendale", conso: "Prestito al Consumo", etudiant: "Prestito Studenti", auto: "Prestito Auto", rachat: "Consolidamento Debiti" } },
+    nav: { home: "Home", loans: "I nostri Prestiti", about: "Chi Siamo", contact: "Contatto", simulator: "Simulatore", loanTypes: { personnel: "Prestito Personale", professionnel: "Prestito Aziendale", conso: "Prestito al Consumo", etudiant: "Prestito Studenti", auto: "Prestito Auto", rachat: "Consolidamento Debiti" } },
     hero: { title: "Un approccio diverso al finanziamento", subtitle: "Soluzioni di credito su misura, trasparenti e veloci.", cta1: "Inizia Simulazione", cta2: "Scopri i Prestiti" },
     advantages: { title: "Perché sceglierci?", speed: "Velocità", speedDesc: "Approvazione immediata.", transparency: "Trasparenza", transparencyDesc: "Nessun costo nascosto.", support: "Supporto", supportDesc: "Consulenti esperti." },
     simulator: { title: "Simula il tuo prestito", amount: "Importo (€)", duration: "Durata (mesi)", monthlyPayment: "Rata mensile", rate: "TAEG fisso", income: "Reddito netto (€)", name: "Nome", email: "Email", submit: "Invia richiesta", preApproved: "Pre-approvato", analysis: "In analisi", success: "Inviato con successo." },
     footer: { rights: "Tutti i diritti riservati.", legal: "Un prestito è un impegno e deve essere rimborsato." }
   },
   pt: {
-    nav: { home: "Início", loans: "Nossos Empréstimos", about: "Sobre", contact: "Contato", simulator: "Simulador", loanTypes: { personnel: "Crédito Pessoal", pro: "Crédito Empresarial", conso: "Crédito ao Consumo", etudiant: "Crédito Estudante", auto: "Crédito Automóvel", rachat: "Consolidação de Dívidas" } },
+    nav: { home: "Início", loans: "Nossos Empréstimos", about: "Sobre", contact: "Contato", simulator: "Simulador", loanTypes: { personnel: "Crédito Pessoal", professionnel: "Crédito Empresarial", conso: "Crédito ao Consumo", etudiant: "Crédito Estudante", auto: "Crédito Automóvel", rachat: "Consolidação de Dívidas" } },
     hero: { title: "Uma abordagem diferente ao financiamento", subtitle: "Soluções de crédito à medida, transparentes e rápidas.", cta1: "Iniciar Simulação", cta2: "Descobrir Empréstimos" },
     advantages: { title: "Porquê escolher-nos?", speed: "Rapidez", speedDesc: "Aprovação imediata.", transparency: "Transparência", transparencyDesc: "Sem taxas ocultas.", support: "Apoio", supportDesc: "Consultores especializados." },
     simulator: { title: "Simule o seu empréstimo", amount: "Montante (€)", duration: "Duração (meses)", monthlyPayment: "Prestação mensal", rate: "TAEG fixa", income: "Rendimentos líquidos (€)", name: "Nome", email: "Email", submit: "Enviar pedido", preApproved: "Pré-aprovado", analysis: "Em análise", success: "Enviado com sucesso." },

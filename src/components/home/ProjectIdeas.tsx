@@ -50,7 +50,7 @@ export default function ProjectIdeas() {
 
           <p className="text-gray-500 max-w-2xl mx-auto">
             Voiture, travaux, études ou voyage : découvrez comment
-            NovaFinance peut vous aider à financer vos projets.
+            FabFinance peut vous aider à financer vos projets.
           </p>
 
         </div>
