@@ -92,7 +92,7 @@ L'application devrait s'afficher !
 
 ---
 
-
+Aloo
 ## Stack technique
 
 | Technologie | Rôle |
