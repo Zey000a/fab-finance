@@ -1,7 +1,6 @@
 #  Fab Finance
 
-> Application de gestion financière personnelle — 100% frontend React
-
+> Application de simulation de prêt et de demande de prêt — 100% frontend React
 ---
 
 ## Table des matières
@@ -90,6 +89,18 @@ http://localhost:5173
 L'application devrait s'afficher !
 
 > **Note :** Si le port `5173` est déjà utilisé, Vite en choisira un autre automatiquement. Regarde le message dans le terminal pour voir l'adresse exacte.
+
+---
+
+
+## 🧰 Stack technique
+
+| Technologie | Rôle |
+|---|---|
+| [React](https://react.dev) | Interface utilisateur |
+| [Vite](https://vitejs.dev) | Serveur de développement ultra-rapide |
+| [TypeScript](https://www.typescriptlang.org) | JavaScript avec typage pour moins de bugs |
+| [Tailwind CSS](https://tailwindcss.com) | Styles utilitaires directement dans le HTML |
 
 ---
 
