@@ -93,7 +93,7 @@ L'application devrait s'afficher !
 ---
 
 
-## 🧰 Stack technique
+## Stack technique
 
 | Technologie | Rôle |
 |---|---|
