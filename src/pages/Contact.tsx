@@ -27,14 +27,14 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     title: "Téléphone",
-    lines: ["0800 123 456", "Lun–Ven, 9h–18h · Gratuit"],
+    lines: ["+33 605 662 921", "Lun–Ven, 9h–18h · Gratuit"],
     color: "#3b82f6",
     bg: "#eff6ff",
   },
   {
     icon: Mail,
     title: "Email",
-    lines: ["contact@fabfinance.fr", "Réponse sous 24h"],
+    lines: ["contact@fabfinancec.com", "Réponse sous 24h"],
     color: "#8b5cf6",
     bg: "#f5f3ff",
   },
