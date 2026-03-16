@@ -86,8 +86,8 @@ export function Footer() {
             {/* Contact rapide */}
             <div className="space-y-2.5">
               {[
-                { icon: Phone,  text: "+33 1 23 45 67 89" },
-                { icon: Mail,   text: "contact@fabfinance.fr" },
+                { icon: Phone,  text: "+33 605 662 921" },
+                { icon: Mail,   text: "contact@fabfinancec.fr" },
                 { icon: MapPin, text: "Paris, France" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2.5 text-sm text-gray-500">
