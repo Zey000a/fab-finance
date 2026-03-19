@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, MessageCircle, Phone, Mail, ChevronRight } from "lucide-react"
 
-const WHATSAPP_NUMBER = "33612345678" // ← remplace par ton numéro sans le +
+const WHATSAPP_NUMBER = "33605662921" // ← remplace par ton numéro sans le +
 
 const QUICK_MESSAGES = [
   { label: "Demander un prêt personnel",    msg: "Bonjour FabFinance 👋 Je souhaite obtenir un prêt personnel. Pouvez-vous m'aider ?"       },
