@@ -61,7 +61,7 @@ export default function Simulator() {
   const expenses = watch("monthlyExpenses")
 
   const { monthlyPayment, totalPaid, totalInterest } = useMemo(
-    () => calculateLoan(amount, duration, 0.045),
+    () => calculateLoan(amount, duration, 0.02),
     [amount, duration]
   )
 
