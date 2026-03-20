@@ -1,7 +1,7 @@
 export function calculateLoan(amount: number, duration: number, rate: number) {
-  const monthlyRate = rate / 12
+  const monthlyRate = rate / 100 / 12
 
-  const round = (v: number) => Number(v.toFixed(2))
+  const round = (v: number) => Math.round(v * 100) / 100
 
   const monthlyPayment =
     (amount * monthlyRate) /
