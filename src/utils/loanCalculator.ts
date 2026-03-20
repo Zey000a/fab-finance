@@ -1,15 +1,17 @@
 export function calculateLoan(amount: number, duration: number, rate: number) {
   const monthlyRate = rate / 12
 
+  const round = (v: number) => Number(v.toFixed(2))
+
   const monthlyPayment =
     (amount * monthlyRate) /
     (1 - Math.pow(1 + monthlyRate, -duration))
 
-  const totalPaid = Number((monthlyPayment * duration).toFixed(2))
-  const totalInterest = totalPaid - amount
+  const totalPaid = round(monthlyPayment * duration)
+  const totalInterest = round(totalPaid - amount)
 
   return {
-    monthlyPayment,
+    monthlyPayment: round(monthlyPayment),
     totalPaid,
     totalInterest,
   }
