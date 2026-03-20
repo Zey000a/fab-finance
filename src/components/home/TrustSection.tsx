@@ -34,14 +34,14 @@ const STATS = [
 
 const REVIEWS = [
   {
-    name: "Sophie Martin",
+    name: "Sophie M.",
     role: "Prêt personnel · 12 000€",
     avatar: "1494790108377-be9c29b29330",
     text: "Demande ultra simple et réponse en quelques minutes. J'ai obtenu mon financement en moins de 48h. Je recommande les yeux fermés !",
     stars: 5,
   },
   {
-    name: "Lucas Bernard",
+    name: "Lucas B.",
     role: "Prêt auto · 18 000€",
     avatar: "1500648767791-00dcc994a43e",
     text: "Interface claire et transparente. La simulation m'a permis de comprendre immédiatement le coût réel de mon crédit. Aucune mauvaise surprise.",
@@ -49,7 +49,7 @@ const REVIEWS = [
     featured: true,
   },
   {
-    name: "Claire Dupont",
+    name: "Claire D.",
     role: "Travaux · 25 000€",
     avatar: "1438761681033-6461ffad8d80",
     text: "Service client vraiment professionnel et disponible. Ils m'ont accompagnée de A à Z pour financer ma rénovation. Merci FabFinance !",
