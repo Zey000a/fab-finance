@@ -20,7 +20,7 @@ const CONTACT_INFO = [
   {
     icon: MapPin,
     title: "Siège social",
-    lines: ["123 Avenue de la Finance", "75008 Paris, France"],
+    lines: ["52 RUE DU DOCTEUR SULTZER 67140 BARR, FRANCE"],
     color: "#16a34a",
     bg: "#f0fdf4",
   },
