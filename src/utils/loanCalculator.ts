@@ -5,7 +5,7 @@ export function calculateLoan(amount: number, duration: number, rate: number) {
     (amount * monthlyRate) /
     (1 - Math.pow(1 + monthlyRate, -duration))
 
-  const totalPaid = Math.pow(monthlyPayment * duration)
+  const totalPaid = monthlyPayment * duration
   const totalInterest = totalPaid - amount
 
   return {
