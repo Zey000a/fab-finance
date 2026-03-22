@@ -15,8 +15,8 @@ const SECTIONS = [
       {
         type: "paragraphs",
         items: [
-          "FabFinance SAS, immatriculée au RCS de Paris sous le numéro XXX XXX XXX, dont le siège social est situé 123 Avenue de la Finance, 75008 Paris, est responsable du traitement de vos données personnelles collectées via ce site.",
-          "Notre Délégué à la Protection des Données (DPO) est joignable à l'adresse : dpo@fabfinance.fr",
+          "FabFinance SAS, immatriculée au RCS de Paris sous le numéro 524 581 873, dont le siège social est situé 52 RUE DU DOCTEUR SULTZER 67140 BARR, est responsable du traitement de vos données personnelles collectées via ce site.",
+          "Notre Délégué à la Protection des Données (DPO) est joignable à l'adresse : dpo@fabfinancec.fr",
         ],
       },
     ],
@@ -408,8 +408,8 @@ export default function PolitiqueConfidentialite() {
           >
             <p className="text-xs text-gray-400 leading-relaxed max-w-2xl mx-auto mb-4">
               Pour exercer vos droits ou pour toute question relative à cette politique, contactez notre DPO à{" "}
-              <a href="mailto:dpo@fabfinance.fr" className="text-green-600 hover:underline font-medium">
-                dpo@fabfinance.fr
+              <a href="mailto:dpo@fabfinancec.fr" className="text-green-600 hover:underline font-medium">
+                dpo@fabfinancec.fr
               </a>
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-400">

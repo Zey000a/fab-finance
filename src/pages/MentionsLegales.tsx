@@ -15,15 +15,15 @@ const SECTIONS = [
       {
         type: "table",
         rows: [
-          ["Raison sociale",        "FabFinance SAS"                         ],
+          ["Raison sociale",        "FAB FINANCE"                         ],
           ["Forme juridique",       "Société par Actions Simplifiée (SAS)"   ],
           ["Capital social",        "50 000 €"                               ],
-          ["Siège social",          "123 Avenue de la Finance, 75008 Paris"  ],
-          ["SIREN",                 "XXX XXX XXX"                            ],
-          ["RCS",                   "Paris B XXX XXX XXX"                    ],
-          ["N° ORIAS",              "XX XXX XXX (www.orias.fr)"              ],
+          ["Siège social",          "52 RUE DU DOCTEUR SULTZER 67140 BARR FRANCE"  ],
+          ["SIREN",                 "524 581 873"                            ],
+          ["RCS",                   "FR74 524 581 873"                    ],
+          ["N° ORIAS",              "14 001 728 (www.orias.fr)"              ],
           ["Autorité de tutelle",   "ACPR – Banque de France"                ],
-          ["Directeur publication", "Prénom NOM, Président"                  ],
+          ["Président de SAS", "MEYER FABIENNE , MARIE-THERESE"                  ],
         ],
       },
     ],
@@ -55,9 +55,9 @@ const SECTIONS = [
       {
         type: "table",
         rows: [
-          ["Email",       "contact@fabfinance.fr"       ],
-          ["Téléphone",   "0800 123 456 (appel gratuit)" ],
-          ["Courrier",    "123 Avenue de la Finance, 75008 Paris, France" ],
+          ["Email",       "contact@fabfinancec.fr"       ],
+          ["Téléphone",   "+33 605 662 921 (appel gratuit)" ],
+          ["Courrier",    "52 RUE DU DOCTEUR SULTZER 67140 BARR FRANCE" ],
           ["Horaires",    "Lun – Ven, 9h – 18h"         ],
         ],
       },
@@ -73,7 +73,7 @@ const SECTIONS = [
       {
         type: "paragraphs",
         items: [
-          "FabFinance SAS est immatriculée en qualité d'Intermédiaire en Opérations de Banque et en Services de Paiement (IOBSP) au registre de l'ORIAS sous le numéro XX XXX XXX, consultable sur www.orias.fr.",
+          "FabFinance SAS est immatriculée en qualité d'Intermédiaire en Opérations de Banque et en Services de Paiement (IOBSP) au registre de l'ORIAS sous le numéro 14 001 728, consultable sur www.orias.fr.",
           "En cette qualité, FabFinance est soumise au contrôle de l'Autorité de Contrôle Prudentiel et de Résolution (ACPR), organe de supervision de la Banque de France, situé 4 Place de Budapest, CS 92459, 75436 Paris Cedex 09.",
           "FabFinance est couverte par une assurance de responsabilité civile professionnelle et dispose d'une garantie financière conformément aux dispositions des articles L.519-1 et suivants du Code monétaire et financier.",
         ],
@@ -165,7 +165,7 @@ const SECTIONS = [
         type: "paragraphs",
         items: [
           "Le présent site et ses mentions légales sont régis par le droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux français seront seuls compétents.",
-          "Conformément à l'article L.612-1 du Code de la consommation, tout consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable du litige qui l'oppose à un professionnel. FabFinance adhère au service de médiation : [Nom du médiateur], [coordonnées].",
+          "Conformément à l'article L.612-1 du Code de la consommation, tout consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable du litige qui l'oppose à un professionnel. FabFinance adhère au service de médiation.",
           "Vous pouvez également recourir à la plateforme européenne de règlement en ligne des litiges accessible à l'adresse : https://ec.europa.eu/consumers/odr",
         ],
       },

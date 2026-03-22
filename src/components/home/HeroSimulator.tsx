@@ -13,8 +13,11 @@ export default function HeroSimulator() {
   const [duration, setDuration] = useState(48)
 
   const { monthlyPayment, totalCost } = useMemo(() => {
-    const result = calculateLoan(amount, duration, 0.02)
-    return { ...result, totalCost: result.monthlyPayment * duration - amount }
+    const result = calculateLoan(amount, duration, 0.03)
+    return {
+      ...result,
+      totalCost: result.monthlyPayment * duration - amount,
+    }
   }, [amount, duration])
 
   const amountPct   = ((amount   - 500) / (50000 - 500)) * 100
