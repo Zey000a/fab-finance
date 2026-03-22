@@ -25,7 +25,7 @@ export default function LoanPage(){
 
   const data= loanConfig[type]
 
-  const title = t(`nav.loanTypes.${type}`)
+  const title = (t.nav.loanTypes as any)[type] ?? type
 
   if(!data){
     return <div className="p-20 text-center">Prêt introuvable</div>
@@ -43,10 +43,10 @@ export default function LoanPage(){
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20 pb-24">
 
-        <LoanInlineSimulator
+        {/* <LoanInlineSimulator
           defaultAmount={data.simulation?.defaultAmount}
           defaultDuration={data.simulation?.defaultDuration}
-        />
+        /> */}
 
         <LoanStats
           min={data.conditions.min}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Users, Target, Award, Globe2, ArrowRight, CheckCircle2, Zap, ShieldCheck } from "lucide-react"
 import { Link } from "wouter"
+import { useI18n } from "@/lib/i18n-context"
 
 const STATS = [
   { value: "1M+",  label: "Clients satisfaits",        sub: "depuis 2016"          },
@@ -49,6 +50,8 @@ const TIMELINE = [
 ]
 
 export default function About() {
+    const { lang, t, routes, switchLang } = useI18n();
+  
   return (
     <div className="min-h-screen bg-white">
 
@@ -122,7 +125,7 @@ export default function About() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              href="/simulateur"
+              href={routes.simulator}
               className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
@@ -133,7 +136,7 @@ export default function About() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
             <Link
-              href="/contact"
+              href={routes.contact}
               className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-semibold text-white text-base border border-white/20 bg-white/8 hover:bg-white/15 transition-all duration-200"
             >
               Nous contacter
@@ -272,7 +275,7 @@ export default function About() {
               </div>
 
               <Link
-                href="/simulateur"
+                href={routes.simulator}
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-white text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
                 style={{
                   background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
@@ -420,7 +423,7 @@ export default function About() {
             de concrétiser vos projets avec FabFinance.
           </p>
           <Link
-            href="/simulateur"
+            href={routes.simulator}
             className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-200 hover:-translate-y-1"
             style={{
               background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",

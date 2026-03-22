@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <HeroSimulator />
       <PopularProjects />
+      <HeroSimulator />
       <LoanProducts />
       <HighlightedProject />
       <MissionSection />

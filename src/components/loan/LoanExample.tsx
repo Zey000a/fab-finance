@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Landmark, Percent, ArrowRight } from "lucide-react"
 import { Link } from "wouter"
+import { useI18n } from "@/lib/i18n-context";
 
 // Calcul avec TAEG 3% annuel
 const AMOUNT    = 15_000
@@ -12,12 +13,15 @@ const interests = +(total - AMOUNT).toFixed(2)
 
 const ROWS = [
   { label: "TAEG fixe",       value: "3,00%",                                   highlight: false },
-  { label: "Taux débiteur",   value: "2,96%",                                   highlight: false },
+  { label: "Taux débiteur",   value: "3,00%",                                   highlight: false },
   { label: "Total remboursé", value: `${total.toLocaleString("fr-FR")} €`,      highlight: false },
   { label: "Coût du crédit",  value: `${interests.toLocaleString("fr-FR")} €`,  highlight: true  },
 ]
 
 export default function LoanExample() {
+
+  const { lang, t, routes, switchLang } = useI18n();
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -128,7 +132,7 @@ export default function LoanExample() {
             </div>
 
             <Link
-              href="/simulateur"
+              href={routes.home}
               className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-sm transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",

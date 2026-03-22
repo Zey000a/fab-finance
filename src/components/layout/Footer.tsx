@@ -12,17 +12,17 @@ const SOCIAL = [
   { icon: Instagram, href: "#", label: "Instagram" },
 ]
 
-const LEGAL_LINKS = [
-  { label: "Mentions légales",              href: "/mentions-legales"          },
-  { label: "Politique de confidentialité",  href: "/politique-confidentialite" },
-  { label: "Comment ça marche", href: "/comment-ca-marche" },
-  { label: "Gestion des cookies", href: "/cookies" }
-
-]
 
 export function Footer() {
-  const { t } = useI18n()
+  const { t, routes } = useI18n()
   const year = new Date().getFullYear()
+
+  const LEGAL_LINKS = [
+  { label: "Mentions légales",             href: routes.legal   },
+  { label: "Politique de confidentialité", href: routes.privacy },
+  { label: "Comment ça marche",            href: routes.howItWorks },
+  { label: "Gestion des cookies",          href: routes.cookies },
+]
 
   return (
     <footer className="bg-gray-950 text-gray-400 relative overflow-hidden">
@@ -47,7 +47,7 @@ export function Footer() {
             <p className="text-gray-400 text-sm mt-1">Simulation gratuite · Réponse en 2 minutes · Sans engagement</p>
           </div>
           <Link
-            href="/simulateur"
+            href={routes.simulator}
             className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-white text-sm flex-shrink-0 transition-all duration-200 hover:-translate-y-0.5"
             style={{
               background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
@@ -66,7 +66,7 @@ export function Footer() {
 
           {/* Brand — 2 cols */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="inline-flex items-center gap-2.5 group">
+            <Link href={routes.home} className="inline-flex items-center gap-2.5 group">
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center text-white shadow-md transition-transform duration-300 group-hover:scale-105"
                 style={{ background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)" }}
@@ -119,12 +119,12 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { href: "/loans/personnel",     label: t("nav.loanTypes.personnel")    },
-                { href: "/loans/professionnel", label: t("nav.loanTypes.professionnel") },
-                { href: "/loans/conso",         label: t("nav.loanTypes.conso")        },
-                { href: "/loans/etudiant",      label: t("nav.loanTypes.etudiant")     },
-                { href: "/loans/auto",          label: t("nav.loanTypes.auto")         },
-                { href: "/loans/rachat",        label: t("nav.loanTypes.rachat")       },
+                { href: `${routes.loans}/personnel`,     label: t.nav.loanTypes.personnel    },
+                { href: `${routes.loans}/professionnel`, label: t.nav.loanTypes.professionnel },
+                { href: `${routes.loans}/conso`,         label: t.nav.loanTypes.conso        },
+                { href: `${routes.loans}/etudiant`,      label: t.nav.loanTypes.etudiant     },
+                { href: `${routes.loans}/auto`,          label: t.nav.loanTypes.auto         },
+                { href: `${routes.loans}/rachat`,        label: t.nav.loanTypes.rachat       },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -146,9 +146,9 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { href: "/about",   label: t("nav.about")   },
-                { href: "/contact", label: t("nav.contact") },
-                { href: "/simulateur", label: "Simulateur"  },
+                { href: routes.about,     label: t.nav.about   },
+                { href: routes.contact,   label: t.nav.contact },
+                { href: routes.simulator, label: t.nav.simulator },
               ].map(({ href, label }) => (
                 <li key={label}>
                   <Link
@@ -201,11 +201,11 @@ export function Footer() {
         <div className="border-t border-gray-800/60 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
 
           <p className="text-xs text-gray-600 max-w-2xl leading-relaxed text-center md:text-left">
-            ⚠️ {t("footer.legal")}
+            ⚠️ {t.footer.legal}
           </p>
 
           <p className="text-xs text-gray-700 flex-shrink-0">
-            © {year} FabFinance · {t("footer.rights")}
+            © {year} FabFinance · {t.footer.rights}
           </p>
 
         </div>

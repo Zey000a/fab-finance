@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Cookie, ShieldCheck, ChevronDown, X, Check } from "lucide-react"
 import { Link } from "wouter"
 
-import { useCookies } from "./Cookiecontext"
+import { useCookies } from "./CookieContext"
 
 export default function CookieBanner() {
   const { status, acceptAll, refuseAll, saveCustom } = useCookies()

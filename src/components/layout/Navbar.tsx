@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { useI18n } from "@/lib/i18n-context";
 import {
@@ -8,32 +8,32 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const LOAN_TYPES = [
-  { id: "personnel",      path: "/loans/personnel",      icon: User,         color: "text-blue-500",   bg: "bg-blue-50" },
-  { id: "professionnel",  path: "/loans/professionnel",  icon: Briefcase,    color: "text-violet-500", bg: "bg-violet-50" },
-  { id: "conso",          path: "/loans/conso",          icon: ShoppingCart, color: "text-orange-500", bg: "bg-orange-50" },
-  { id: "etudiant",       path: "/loans/etudiant",       icon: GraduationCap,color: "text-sky-500",    bg: "bg-sky-50" },
-  { id: "auto",           path: "/loans/auto",           icon: Car,          color: "text-emerald-500",bg: "bg-emerald-50" },
-  { id: "rachat",         path: "/loans/rachat",         icon: RefreshCw,    color: "text-rose-500",   bg: "bg-rose-50" },
+const LOAN_IDS = [
+  { id: "personnel",     icon: User,          color: "text-blue-500",   bg: "bg-blue-50"   },
+  { id: "professionnel", icon: Briefcase,     color: "text-violet-500", bg: "bg-violet-50" },
+  { id: "conso",         icon: ShoppingCart,  color: "text-orange-500", bg: "bg-orange-50" },
+  { id: "etudiant",      icon: GraduationCap, color: "text-sky-500",    bg: "bg-sky-50"    },
+  { id: "auto",          icon: Car,           color: "text-emerald-500",bg: "bg-emerald-50"},
+  { id: "rachat",        icon: RefreshCw,     color: "text-rose-500",   bg: "bg-rose-50"   },
 ];
 
 const LANGUAGES = [
-  { code: "fr", label: "Français",   flag: "🇫🇷" },
-  { code: "en", label: "English",    flag: "🇬🇧" },
-  { code: "de", label: "Deutsch",    flag: "🇩🇪" },
-  { code: "es", label: "Español",    flag: "🇪🇸" },
-  { code: "it", label: "Italiano",   flag: "🇮🇹" },
-  { code: "pt", label: "Português",  flag: "🇵🇹" },
+  { code: "fr", label: "Français",  flag: "🇫🇷" },
+  { code: "en", label: "English",   flag: "🇬🇧" },
+  { code: "de", label: "Deutsch",   flag: "🇩🇪" },
+  { code: "es", label: "Español",   flag: "🇪🇸" },
+  { code: "it", label: "Italiano",  flag: "🇮🇹" },
+  { code: "pt", label: "Português", flag: "🇵🇹" },
 ];
 
 export function Navbar() {
   const [location] = useLocation();
-  const { lang, setLang, t } = useI18n();
+  const { lang, t, routes, switchLang } = useI18n();
 
-  const [scrolled, setScrolled]           = useState(false);
-  const [mobileOpen, setMobileOpen]       = useState(false);
-  const [loansOpen, setLoansOpen]         = useState(false);
-  const [langOpen, setLangOpen]           = useState(false);
+  const [scrolled,        setScrolled]    = useState(false);
+  const [mobileOpen,      setMobileOpen]  = useState(false);
+  const [loansOpen,       setLoansOpen]   = useState(false);
+  const [langOpen,        setLangOpen]    = useState(false);
   const [mobileLoansOpen, setMobileLoans] = useState(false);
 
   const langRef  = useRef<HTMLDivElement>(null);
@@ -47,21 +47,17 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* Ferme les dropdowns au clic extérieur */
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node))
-        setLangOpen(false);
-      if (loansRef.current && !loansRef.current.contains(e.target as Node))
-        setLoansOpen(false);
+      if (langRef.current  && !langRef.current.contains(e.target  as Node)) setLangOpen(false);
+      if (loansRef.current && !loansRef.current.contains(e.target as Node)) setLoansOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   const closeMobile = () => { setMobileOpen(false); window.scrollTo({ top: 0 }); };
-
-  const isActive = (path: string) => location === path;
+  const isActive    = (path: string) => location === path;
 
   return (
     <nav
@@ -74,7 +70,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
 
         {/* ── LOGO ── */}
-        <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
+        <Link href={routes.home} className="flex items-center gap-2.5 group flex-shrink-0">
           <div
             className="w-9 h-9 rounded-xl flex items-center justify-center text-white shadow-md transition-transform duration-300 group-hover:scale-105"
             style={{ background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)" }}
@@ -89,7 +85,9 @@ export function Navbar() {
         {/* ── DESKTOP LINKS ── */}
         <div className="hidden lg:flex items-center gap-1">
 
-          <NavLink href="/" active={isActive("/")}>{t("nav.home")}</NavLink>
+          <NavLink href={routes.home} active={isActive(routes.home)}>
+            {t.nav.home}
+          </NavLink>
 
           {/* Loans mega-dropdown */}
           <div ref={loansRef} className="relative">
@@ -101,7 +99,7 @@ export function Navbar() {
                 loansOpen ? "text-green-600 bg-green-50" : "text-gray-600 hover:text-green-600 hover:bg-gray-50"
               }`}
             >
-              {t("nav.loans")}
+              {t.nav.loans}
               <motion.span animate={{ rotate: loansOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
                 <ChevronDown className="w-4 h-4" />
               </motion.span>
@@ -119,12 +117,12 @@ export function Navbar() {
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[420px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 grid grid-cols-2 gap-2"
                   style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.12)" }}
                 >
-                  {LOAN_TYPES.map(loan => {
+                  {LOAN_IDS.map(loan => {
                     const Icon = loan.icon;
                     return (
                       <Link
                         key={loan.id}
-                        href={loan.path}
+                        href={`${routes.loans}/${loan.id}`}
                         onClick={() => setLoansOpen(false)}
                         className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors group/item"
                       >
@@ -132,22 +130,22 @@ export function Navbar() {
                           <Icon className={`w-4 h-4 ${loan.color}`} />
                         </div>
                         <span className="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">
-                          {t(`nav.loanTypes.${loan.id}`)}
+                          {(t.nav.loanTypes as any)[loan.id]}
                         </span>
                       </Link>
                     );
                   })}
 
-                  {/* Footer du dropdown */}
+                  {/* Footer dropdown */}
                   <div className="col-span-2 mt-1 pt-3 border-t border-gray-100">
                     <Link
-                      href="/simulateur"
+                      href={routes.simulator}
                       onClick={() => setLoansOpen(false)}
                       className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-green-50 hover:bg-green-100 transition-colors group/sim"
                     >
                       <div>
-                        <div className="text-sm font-semibold text-green-700">Simuler mon prêt</div>
-                        <div className="text-xs text-green-600/80">Réponse immédiate, sans engagement</div>
+                        <div className="text-sm font-semibold text-green-700">{t.common.simulate}</div>
+                        <div className="text-xs text-green-600/80">{t.common.noCommit}</div>
                       </div>
                       <ArrowRight className="w-4 h-4 text-green-600 group-hover/sim:translate-x-1 transition-transform" />
                     </Link>
@@ -156,9 +154,16 @@ export function Navbar() {
               )}
             </AnimatePresence>
           </div>
-          <NavLink href="/about"   active={isActive("/about")}>{t("nav.about")}</NavLink>
-          <NavLink href="/contact" active={isActive("/contact")}>{t("nav.contact")}</NavLink>
-          {/* <NavLink href="/comment-ca-marche" active={isActive("/comment-ca-marche")}>{t("nav.comment")}</NavLink> */}
+
+          <NavLink href={routes.about}   active={isActive(routes.about)}>
+            {t.nav.about}
+          </NavLink>
+          <NavLink href={routes.contact} active={isActive(routes.contact)}>
+            {t.nav.contact}
+          </NavLink>
+          <NavLink href={routes.howItWorks} active={isActive(routes.howItWorks)}>
+            {t.nav.comment}
+          </NavLink>
         </div>
 
         {/* ── RIGHT SIDE ── */}
@@ -187,7 +192,7 @@ export function Navbar() {
                   {LANGUAGES.map(l => (
                     <button
                       key={l.code}
-                      onClick={() => { setLang(l.code as any); setLangOpen(false); }}
+                      onClick={() => { switchLang(l.code as any); setLangOpen(false); }}
                       className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
                         lang === l.code
                           ? "bg-green-50 text-green-700 font-semibold"
@@ -205,21 +210,20 @@ export function Navbar() {
 
           {/* CTA */}
           <Link
-            href="/simulateur"
+            href={routes.simulator}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
             style={{
               background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
               boxShadow: "0 4px 14px rgba(22,163,74,0.35)",
             }}
           >
-            Demander un prêt
+            {t.hero.cta1}
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
         {/* ── MOBILE RIGHT ── */}
         <div className="lg:hidden flex items-center gap-1">
-          {/* Lang */}
           <div ref={langRef} className="relative">
             <button
               onClick={() => setLangOpen(v => !v)}
@@ -239,7 +243,7 @@ export function Navbar() {
                   {LANGUAGES.map(l => (
                     <button
                       key={l.code}
-                      onClick={() => { setLang(l.code as any); setLangOpen(false); }}
+                      onClick={() => { switchLang(l.code as any); setLangOpen(false); }}
                       className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm ${
                         lang === l.code ? "bg-green-50 text-green-700 font-semibold" : "text-gray-700 hover:bg-gray-50"
                       }`}
@@ -253,14 +257,13 @@ export function Navbar() {
             </AnimatePresence>
           </div>
 
-          {/* Burger */}
           <button
             onClick={() => setMobileOpen(v => !v)}
             className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             <AnimatePresence mode="wait" initial={false}>
               {mobileOpen
-                ? <motion.span key="x"   initial={{rotate:-90,opacity:0}} animate={{rotate:0,opacity:1}} exit={{rotate:90,opacity:0}} transition={{duration:0.15}}><X className="w-5 h-5"/></motion.span>
+                ? <motion.span key="x"   initial={{rotate:-90,opacity:0}} animate={{rotate:0,opacity:1}} exit={{rotate:90,opacity:0}}  transition={{duration:0.15}}><X    className="w-5 h-5"/></motion.span>
                 : <motion.span key="men" initial={{rotate:90,opacity:0}}  animate={{rotate:0,opacity:1}} exit={{rotate:-90,opacity:0}} transition={{duration:0.15}}><Menu className="w-5 h-5"/></motion.span>
               }
             </AnimatePresence>
@@ -280,11 +283,11 @@ export function Navbar() {
           >
             <div className="px-4 py-5 flex flex-col gap-1">
 
-              {/* Nav links */}
               {[
-                { href: "/",       label: t("nav.home") },
-                { href: "/about",  label: t("nav.about") },
-                { href: "/contact",label: t("nav.contact") },
+                { href: routes.home,       label: t.nav.home       },
+                { href: routes.about,      label: t.nav.about      },
+                { href: routes.contact,    label: t.nav.contact    },
+                { href: routes.howItWorks, label: t.nav.comment    },
               ].map(({ href, label }) => (
                 <Link
                   key={href}
@@ -304,7 +307,7 @@ export function Navbar() {
                   onClick={() => setMobileLoans(v => !v)}
                   className="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 bg-gray-50"
                 >
-                  {t("nav.loans")}
+                  {t.nav.loans}
                   <motion.span animate={{ rotate: mobileLoansOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
                     <ChevronDown className="w-4 h-4 opacity-60" />
                   </motion.span>
@@ -319,12 +322,12 @@ export function Navbar() {
                       className="overflow-hidden"
                     >
                       <div className="px-4 py-2 flex flex-col gap-1">
-                        {LOAN_TYPES.map(loan => {
+                        {LOAN_IDS.map(loan => {
                           const Icon = loan.icon;
                           return (
                             <Link
                               key={loan.id}
-                              href={loan.path}
+                              href={`${routes.loans}/${loan.id}`}
                               onClick={closeMobile}
                               className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50"
                             >
@@ -332,7 +335,7 @@ export function Navbar() {
                                 <Icon className={`w-3.5 h-3.5 ${loan.color}`} />
                               </div>
                               <span className="text-sm font-medium text-gray-700">
-                                {t(`nav.loanTypes.${loan.id}`)}
+                                {(t.nav.loanTypes as any)[loan.id]}
                               </span>
                             </Link>
                           );
@@ -345,7 +348,7 @@ export function Navbar() {
 
               {/* Mobile CTA */}
               <Link
-                href="/simulateur"
+                href={routes.simulator}
                 onClick={closeMobile}
                 className="mt-3 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-white font-bold text-base transition-all"
                 style={{
@@ -353,7 +356,7 @@ export function Navbar() {
                   boxShadow: "0 4px 14px rgba(22,163,74,0.35)",
                 }}
               >
-                Demander un prêt
+                {t.hero.cta1}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -364,17 +367,12 @@ export function Navbar() {
   );
 }
 
-/* ── Composant utilitaire NavLink ── */
-function NavLink({
-  href, active, children,
-}: { href: string; active: boolean; children: React.ReactNode }) {
+function NavLink({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
   return (
     <Link
       href={href}
       className={`relative px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 ${
-        active
-          ? "text-green-700 bg-green-50"
-          : "text-gray-600 hover:text-green-700 hover:bg-gray-50"
+        active ? "text-green-700 bg-green-50" : "text-gray-600 hover:text-green-700 hover:bg-gray-50"
       }`}
     >
       {children}

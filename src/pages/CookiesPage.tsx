@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Cookie, ShieldCheck, Check, RefreshCw, Save, Info, AlertTriangle } from "lucide-react"
 import { Link } from "wouter"
-import { useCookies } from "@/components/Cookiecontext"
+import { useCookies } from "@/components/CookieContext"
 
 const COOKIE_TYPES = [
   {

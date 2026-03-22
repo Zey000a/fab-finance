@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Lightbulb } from "lucide-react"
 import { Link } from "wouter"
+import { useI18n } from "@/lib/i18n-context"
 
 interface UsageItem {
   title: string
@@ -13,6 +14,8 @@ interface Props {
 }
 
 export default function LoanUsage({ usage = [] }: Props) {
+  const { lang, t, routes, switchLang } = useI18n();
+  
   if (!usage.length) return null
 
   return (
@@ -80,10 +83,10 @@ export default function LoanUsage({ usage = [] }: Props) {
               </p>
 
               {/* Lien */}
-              <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              {/* <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 En savoir plus
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </div>
+              </div> */}
             </div>
 
             {/* Barre verte bas */}
@@ -103,7 +106,7 @@ export default function LoanUsage({ usage = [] }: Props) {
         className="mt-8 text-center"
       >
         <Link
-          href="/simulateur"
+          href={routes.simulator}
           className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-white text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
           style={{
             background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",

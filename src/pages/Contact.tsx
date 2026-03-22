@@ -5,6 +5,8 @@ import { z } from "zod"
 import { MapPin, Phone, Mail, CheckCircle2, Loader2, ArrowRight, Clock, MessageSquare, Zap } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
+import { useI18n } from "@/lib/i18n-context"
+
 const contactSchema = z.object({
   firstName: z.string().min(2, "Le prénom est requis"),
   lastName:  z.string().min(2, "Le nom est requis"),
@@ -40,11 +42,6 @@ const CONTACT_INFO = [
   },
 ]
 
-const QUICK_LINKS = [
-  { icon: Zap,           label: "Simuler mon prêt",   href: "/simulateur",      color: "#16a34a" },
-  // { icon: MessageSquare, label: "FAQ",                 href: "#faq",             color: "#f59e0b" },
-  // { icon: Clock,         label: "Suivi de dossier",   href: "/espace-client",   color: "#0ea5e9" },
-]
 
 const inputClass =
   "w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 text-sm transition-all duration-200 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 focus:bg-white"
@@ -52,6 +49,14 @@ const inputClass =
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess]       = useState(false)
+
+  const { lang, t, routes, switchLang } = useI18n();
+  
+  const QUICK_LINKS = [
+    { icon: Zap,           label: "Simuler mon prêt",   href: routes.simulator,      color: "#16a34a" },
+    // { icon: MessageSquare, label: "FAQ",                 href: "#faq",             color: "#f59e0b" },
+    // { icon: Clock,         label: "Suivi de dossier",   href: "/espace-client",   color: "#0ea5e9" },
+  ]
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),

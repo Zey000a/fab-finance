@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { ClipboardList, SearchCheck, Banknote, ArrowRight } from "lucide-react"
 import { Link } from "wouter"
+import { useI18n } from "@/lib/i18n-context"
 
 const STEPS = [
   {
@@ -30,6 +31,8 @@ const STEPS = [
 ]
 
 export default function LoanSteps() {
+    const { lang, t, routes, switchLang } = useI18n();
+  
   return (
     <motion.section
       initial={{ opacity: 0, y: 24 }}
@@ -129,7 +132,7 @@ export default function LoanSteps() {
           </span>
         </p>
         <Link
-          href="/simulateur"
+          href={routes.simulator}
           className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-sm flex-shrink-0 transition-all duration-200 hover:-translate-y-0.5"
           style={{
             background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",

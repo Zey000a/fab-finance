@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Star, Users, TrendingUp, ShieldCheck, ArrowRight } from "lucide-react"
 import { Link } from "wouter"
+import { useI18n } from "@/lib/i18n-context"
 
 const STATS = [
   { icon: Users,      value: "+200 000", label: "projets financés",       color: "#4ade80" },
@@ -28,6 +29,8 @@ const REVIEWS = [
 ]
 
 export default function LoanTrust() {
+    const { lang, t, routes, switchLang } = useI18n();
+  
   return (
     <motion.section
       initial={{ opacity: 0, y: 24 }}
@@ -136,7 +139,7 @@ export default function LoanTrust() {
         {/* CTA */}
         <div className="text-center">
           <Link
-            href="/simulateur"
+            href={routes.simulator}
             className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-white text-sm transition-all duration-200 hover:-translate-y-0.5"
             style={{
               background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",

@@ -1,6 +1,7 @@
 import { Link } from "wouter"
 import { motion } from "framer-motion"
 import { ArrowLeft, ArrowRight, ShieldCheck, Clock, ChevronRight } from "lucide-react"
+import { useI18n } from "@/lib/i18n-context";
 
 interface Props {
   title:    string
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export default function LoanHero({ title, img, tagline }: Props) {
+  const { lang, t, routes, switchLang } = useI18n();
+
   return (
     <section className="relative h-[520px] md:h-[580px] flex items-center overflow-hidden">
 
@@ -48,9 +51,9 @@ export default function LoanHero({ title, img, tagline }: Props) {
             transition={{ delay: 0.15, duration: 0.5 }}
             className="flex items-center gap-1.5 text-sm text-gray-400 mb-7"
           >
-            <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
+            <Link href={routes.home} className="hover:text-white transition-colors">Accueil</Link>
             <ChevronRight className="w-3.5 h-3.5 opacity-50" />
-            <Link href="/" className="hover:text-white transition-colors">Nos prêts</Link>
+            <Link href={routes.home} className="hover:text-white transition-colors">Nos prêts</Link>
             <ChevronRight className="w-3.5 h-3.5 opacity-50" />
             <span className="text-green-400 font-medium">{title}</span>
           </motion.div>
@@ -83,7 +86,7 @@ export default function LoanHero({ title, img, tagline }: Props) {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              href="/simulateur"
+              href={routes.simulator}
               className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-white text-sm transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
@@ -95,7 +98,7 @@ export default function LoanHero({ title, img, tagline }: Props) {
             </Link>
 
             <Link
-              href="/"
+              href={routes.home}
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white text-sm border border-white/20 bg-white/8 hover:bg-white/15 transition-all duration-200"
             >
               <ArrowLeft className="w-4 h-4" />
