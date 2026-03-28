@@ -55,7 +55,7 @@ const SECTIONS = [
       {
         type: "table",
         rows: [
-          ["Email",       "contact@fabfinancec.fr"       ],
+          ["Email",       "contact@fabfinancec.com"       ],
           ["Téléphone",   "+33 605 662 921 (appel gratuit)" ],
           ["Courrier",    "52 RUE DU DOCTEUR SULTZER 67140 BARR FRANCE" ],
           ["Horaires",    "Lun – Ven, 9h – 18h"         ],
@@ -334,8 +334,8 @@ export default function MentionsLegales() {
           >
             <p className="text-xs text-gray-400 leading-relaxed max-w-2xl mx-auto mb-4">
               Pour toute question relative à ces mentions légales, vous pouvez nous contacter à{" "}
-              <a href="mailto:legal@fabfinance.fr" className="text-green-600 hover:underline font-medium">
-                legal@fabfinance.fr
+              <a href="mailto:legal@fabfinancec.com" className="text-green-600 hover:underline font-medium">
+                legal@fabfinancec.com
               </a>
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-400">
@@ -347,7 +347,7 @@ export default function MentionsLegales() {
                 Gestion des cookies
               </Link>
               <span>·</span>
-              <Link href="/contact" className="hover:text-green-600 transition-colors">
+              <Link href="/Contact" className="hover:text-green-600 transition-colors">
                 Nous contacter
               </Link>
             </div>
