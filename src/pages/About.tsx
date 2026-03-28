@@ -265,7 +265,7 @@ export default function About() {
                   "Simulation gratuite et sans engagement",
                   "Conseillers disponibles 7j/7",
                   "Déblocage des fonds en 48h",
-                  "Zéro frais de dossier",
+                  "Faible frais de dossier",
                 ].map(item => (
                   <div key={item} className="flex items-center gap-3 text-gray-700 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
