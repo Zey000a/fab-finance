@@ -84,7 +84,7 @@ export default function LoanAdvantages({ advantages }: Props) {
           <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0" />
           <p className="text-sm text-green-800 font-medium">
             Tous ces avantages sont inclus sans frais supplémentaires —{" "}
-            <span className="font-bold">zéro frais de dossier</span>, zéro mauvaise surprise.
+            <span className="font-bold">Faible frais de dossier</span>, zéro mauvaise surprise.
           </p>
         </div>
       </div>
