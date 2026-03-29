@@ -107,7 +107,7 @@ const GUARANTEES = [
   { icon: Zap,           color: "#16a34a", title: "Rapidité",       desc: "Réponse de principe en 2 minutes, fonds sous 48h après signature."     },
   { icon: Lock,          color: "#3b82f6", title: "Sécurité",       desc: "Vos données sont chiffrées SSL 256-bit et jamais revendues à des tiers." },
   { icon: HeartHandshake,color: "#8b5cf6", title: "Accompagnement", desc: "Un conseiller dédié vous suit de la simulation au versement des fonds."  },
-  { icon: ShieldCheck,   color: "#f59e0b", title: "Transparence",   desc: "Zéro frais cachés, zéro frais de dossier. Le TAEG est affiché dès le départ." },
+  { icon: ShieldCheck,   color: "#f59e0b", title: "Transparence",   desc: "Zéro frais cachés, faible frais de dossier. Le TAEG est affiché dès le départ." },
 ]
 
 const FAQS = [
@@ -188,7 +188,7 @@ export default function HowItWorks() {
                 { value: "2 min",     label: "pour simuler"    },
                 { value: "24h",       label: "réponse dossier" },
                 { value: "14 jours",  label: "rétractation"    },
-                { value: "0 €",       label: "frais de dossier"},
+                { value: "Faible",       label: "frais de dossier"},
               ].map(({ value, label }) => (
                 <div key={label} className="text-center">
                   <div
