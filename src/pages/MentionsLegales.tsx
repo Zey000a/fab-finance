@@ -339,15 +339,15 @@ export default function MentionsLegales() {
               </a>
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-400">
-              <Link href="/politique-confidentialite" className="hover:text-green-600 transition-colors">
+              <Link to="/politique-confidentialite" className="hover:text-green-600 transition-colors">
                 Politique de confidentialité
               </Link>
               <span>·</span>
-              <Link href="/cookies" className="hover:text-green-600 transition-colors">
+              <Link to="/cookies" className="hover:text-green-600 transition-colors">
                 Gestion des cookies
               </Link>
               <span>·</span>
-              <Link href="/contact" className="hover:text-green-600 transition-colors">
+              <Link to="/contact" className="hover:text-green-600 transition-colors">
                 Nous contacter
               </Link>
             </div>
