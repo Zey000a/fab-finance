@@ -135,7 +135,7 @@ export default function Simulator() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-lg max-w-xl mx-auto"
           >
-            Réponse de principe immédiate · Dossier confidentiel · Zéro frais de dossier
+            Réponse de principe immédiate · Dossier confidentiel · Faible frais de dossier
           </motion.p>
         </div>
       </div>
@@ -297,7 +297,7 @@ export default function Simulator() {
                 {[
                   { icon: ShieldCheck, text: "Vos données sont chiffrées (SSL 256-bit)",     color: "#16a34a" },
                   { icon: Clock,       text: "Réponse de principe en moins de 2 minutes",     color: "#3b82f6" },
-                  { icon: CheckCircle2,text: "Zéro frais de dossier · Sans engagement",       color: "#8b5cf6" },
+                  { icon: CheckCircle2,text: "Faible frais de dossier · Sans engagement",       color: "#8b5cf6" },
                 ].map(({ icon: Icon, text, color }) => (
                   <div key={text} className="flex items-center gap-3 text-sm text-gray-500">
                     <Icon className="w-4 h-4 flex-shrink-0" style={{ color }} />
