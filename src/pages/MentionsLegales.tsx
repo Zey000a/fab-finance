@@ -347,7 +347,7 @@ export default function MentionsLegales() {
                 Gestion des cookies
               </Link>
               <span>·</span>
-              <Link to="/contact" className="hover:text-green-600 transition-colors">
+              <Link to="/fr/contact" className="hover:text-green-600 transition-colors">
                 Nous contacter
               </Link>
             </div>
