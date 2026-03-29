@@ -87,7 +87,7 @@ export function Footer() {
             <div className="space-y-2.5">
               {[
                 { icon: Phone,  text: "+33 605 662 921" },
-                { icon: Mail,   text: "contact@fabfinancec.fr" },
+                { icon: Mail,   text: "contact@fabfinancec.com" },
                 { icon: MapPin, text: "67140 Barr, France" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2.5 text-sm text-gray-500">
