@@ -402,7 +402,7 @@ export default function Contact() {
                     {/* RGPD */}
                     <p className="text-xs text-gray-400 leading-relaxed">
                       En soumettant ce formulaire, vous acceptez notre{" "}
-                      <a href="#" className="text-green-600 hover:underline">
+                      <a href="politique-confidentialite" className="text-green-600 hover:underline">
                         politique de confidentialité
                       </a>
                       . Vos données sont traitées conformément au RGPD.
