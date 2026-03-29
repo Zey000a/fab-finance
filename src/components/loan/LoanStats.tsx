@@ -27,7 +27,7 @@ export default function LoanStats({ min, max, duration, taeg, rateType }: Props)
     { label: "Durée",             value: duration },
     { label: "TAEG fixe",         value: taeg     },
     { label: "Type de taux",      value: rateType },
-    { label: "Frais de dossier",  value: "0 €"    },
+    { label: "Frais de dossier",  value: "Faible"    },
   ]
 
   return (
